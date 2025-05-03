@@ -166,36 +166,29 @@
      </footer>
  
      <script>
-         // Función para obtener parámetros de la URL
-         function getURLParams() {
-             const params = new URLSearchParams(window.location.search);
-             return {
-                 nombre: params.get('nombre') || 'OMAR ERNESTO OCAMPO TORRES',
-                 documento: params.get('documento') || '14A6808915',
-                 tipo: params.get('tipo') || 'CHOFER',
-                 fecha: params.get('fecha') || '22/04/2029',
-                 vigencia: params.get('vigencia') || 'VÁLIDA',
-                 emitida: params.get('emitida') || 'OFICINAS CENTRALES'
-             };
-         }
- 
-         // Función para cargar los datos
-         function cargarDatos() {
-             const datos = getURLParams();
-             
-             document.getElementById('nombre').textContent = datos.nombre;
-             document.getElementById('documento').textContent = datos.documento;
-             document.getElementById('tipo').textContent = datos.tipo;
-             document.getElementById('fecha').textContent = datos.fecha;
-             
-             const vigenciaElement = document.getElementById('vigencia');
-             vigenciaElement.innerHTML = `<span class="valid-tag">${datos.vigencia}</span>`;
-             
-             document.getElementById('emitida').textContent = datos.emitida;
-         }
- 
-         // Ejecutar al cargar la página
-         window.onload = cargarDatos;
-     </script>
+    function getURLParams() {
+        return {
+            nombre: 'MIGUEL HERNANDEZ MADRIGAL',
+            documento: '01R5659874',
+            fecha: '30/04/2029',
+            tipo: 'Chofer',
+            vigencia: 'VÁLIDA',
+            emitida: 'OFICINAS CENTRALES'
+        };
+    }
+
+    function cargarDatos() {
+        const datos = getURLParams();
+
+        document.getElementById('nombre').textContent = datos.nombre;
+        document.getElementById('documento').textContent = datos.documento;
+        document.getElementById('fecha').textContent = datos.fecha;
+        document.getElementById('tipo').textContent = datos.tipo;
+        document.getElementById('vigencia').innerHTML = `<span class="valid-tag">${datos.vigencia}</span>`;
+        document.getElementById('emitida').textContent = datos.emitida;
+    }
+
+    window.onload = cargarDatos;
+</script>
  </body>
  </html>
